@@ -221,3 +221,111 @@ table.tree-item-selected td:nth-child(2) {
     transform: rotate(360deg);
   }
 }
+
+/* ---- Mobile responsive overrides ---- */
+@media screen and (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Prevent GWT SplitLayoutPanel from forcing min-width */
+  .gwt-SplitLayoutPanel {
+    min-width: 0 !important;
+  }
+
+  /* Make the split panel draggers easier to grab on touch */
+  .gwt-SplitLayoutPanel-HDragger {
+    width: 8px !important;
+    cursor: col-resize;
+  }
+  .gwt-SplitLayoutPanel-VDragger {
+    height: 8px !important;
+    cursor: row-resize;
+  }
+
+  /* Shrink tree items for compact mobile display */
+  .tree-item td {
+    padding: 4px 3px !important;
+    font-size: 13px;
+  }
+
+  .tree-item-leaf {
+    padding-left: 20px !important;
+  }
+
+  /* Buttons & icon touch targets */
+  .iconButton img {
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  .gwt-PushButton {
+    min-height: 36px;
+    min-width: 36px;
+  }
+
+  /* Text labels */
+  .entityLabel, .featureLabel, .stateLabel, .historyLabel {
+    font-size: 13px !important;
+  }
+
+  /* Fancybox image viewer - reduce padding on mobile */
+  .fancybox-slide {
+    padding: 10px !important;
+  }
+  .fancybox-slide--image {
+    padding: 10px 0 !important;
+  }
+  .fancybox-caption {
+    padding: 12px 10px !important;
+    font-size: 13px;
+  }
+  .fancybox-infobar {
+    font-size: 12px;
+  }
+  .fancybox-navigation .fancybox-button {
+    width: 44px !important;
+    height: 60px !important;
+    padding: 0 !important;
+  }
+  .fancybox-thumbs {
+    height: 70px;
+    padding: 6px 4px 3px;
+  }
+  .fancybox-show-thumbs .fancybox-inner {
+    bottom: 70px;
+  }
+
+  /* Popups/dialogs - prevent them from overflowing viewport */
+  .gwt-PopupPanel {
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+    overflow: auto !important;
+  }
+
+  td, th {
+    padding: 3px 3px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tree-item td {
+    padding: 3px 2px !important;
+    font-size: 12px;
+  }
+
+  .entityLabel, .featureLabel, .stateLabel, .historyLabel {
+    font-size: 12px !important;
+  }
+
+  .fancybox-navigation .fancybox-button {
+    width: 36px !important;
+    height: 48px !important;
+  }
+  .fancybox-button {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
