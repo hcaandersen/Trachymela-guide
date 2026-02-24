@@ -947,3 +947,86 @@ a.popwin {
 }
 }
 /*---------------------------- END PRINT STYLE SETTINGS ----------------------------*/
+
+/*---------------------------- BEGIN MOBILE RESPONSIVE SETTINGS ----------------------------*/
+@media screen and (max-width: 768px) {
+    #left_menu {
+        display: none;
+    }
+
+    #content {
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 0;
+    }
+
+    #thumbnailsArea {
+        float: none;
+        width: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #thumbnailsArea a#thumbnails {
+        display: inline-block;
+        width: calc(50% - 10px);
+        text-align: center;
+    }
+
+    #thumbnailsArea a#thumbnails img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #menu {
+        min-width: 0;
+        padding: 5px 10px 2px 10px;
+        font-size: 12px;
+        height: auto;
+        white-space: normal;
+    }
+
+    .bannertitle {
+        font-size: 22px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .bannerbg, .bannerImage {
+        height: auto;
+    }
+
+    .bannerbg img, .bannerImage img, .fact_title img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #banner {
+        height: auto;
+    }
+
+    #OtherMediaArea, #VideoMediaArea {
+        float: none;
+        min-width: 0;
+        width: auto;
+        text-align: center;
+    }
+
+    table {
+        max-width: 100%;
+    }
+
+    #alphabet {
+        letter-spacing: 5px;
+        font-size: 12px;
+    }
+
+    div.caption, div.bottom_img_caption {
+        width: auto;
+    }
+}
+/*---------------------------- END MOBILE RESPONSIVE SETTINGS ----------------------------*/
