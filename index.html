@@ -9,15 +9,18 @@
             --dark-brown: #4b3621;
             --mid-brown: #8b6b43;
             --light-tan: #efe6d8;
-            --eucalyptus-green: #6d7d6a; 
+            --eucalyptus-green: #6d7d6a;
             --text-main: #333;
         }
 
+        *, *::before, *::after { box-sizing: border-box; }
+
         body {
             margin: 0;
-            font-family: 'Georgia', serif; 
+            font-family: 'Georgia', serif;
             background-color: var(--light-tan);
             color: var(--text-main);
+            overflow-x: hidden;
         }
 
         .header {
@@ -33,6 +36,12 @@
             margin: 0;
             font-family: Arial, sans-serif;
             font-size: 32px;
+        }
+
+        .header .logo {
+            height: 45px;
+            width: auto;
+            flex-shrink: 0;
         }
 
         .author-name {
@@ -53,11 +62,11 @@
             gap: 30px;
         }
 
-        .hero-text { flex: 1; min-width: 320px; }
-        
+        .hero-text { flex: 1; min-width: 280px; }
+
         .hero-image-container {
             flex: 1.2;
-            min-width: 320px;
+            min-width: 280px;
             border: 3px solid var(--mid-brown);
             border-radius: 8px;
             overflow: hidden;
@@ -73,9 +82,9 @@
         /* Navigation Grid - 6 buttons */
         .nav-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 12px;
-            margin: -30px 5% 40px 5%; /* Negative margin pulls it up into the hero slightly */
+            margin: -30px 5% 40px 5%;
             position: relative;
             z-index: 10;
         }
@@ -95,6 +104,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 48px;
         }
 
         .nav-item:hover {
@@ -112,17 +122,23 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
-        @media (max-width: 600px) {
-            .header h1 { font-size: 22px; }
-            .header img { height: 35px; }
-            .hero { padding: 20px 5% 30px 5%; gap: 20px; }
+        @media (max-width: 768px) {
+            .hero { padding: 20px 5% 35px 5%; gap: 20px; }
             .hero-text { min-width: 0; }
-            .hero-text h2 { font-size: 22px !important; }
-            .hero-text p { font-size: 15px !important; }
             .hero-image-container { min-width: 0; }
-            .nav-grid { grid-template-columns: 1fr 1fr; margin-top: 20px; }
-            .nav-item { padding: 14px 8px; font-size: 13px; }
-            .content { padding: 25px 5%; margin: 0 10px 40px 10px; }
+            .nav-grid { grid-template-columns: 1fr 1fr 1fr; margin-top: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 { font-size: 22px; }
+            .header .logo { height: 35px; }
+            .hero { padding: 15px 4% 25px 4%; gap: 15px; }
+            .hero-text h2 { font-size: 20px !important; }
+            .hero-text p { font-size: 14px !important; }
+            .nav-grid { grid-template-columns: 1fr 1fr; margin: 10px 4% 30px 4%; gap: 8px; }
+            .nav-item { padding: 12px 6px; font-size: 12px; }
+            .content { padding: 20px 4%; margin: 0 8px 30px 8px; }
+            .content p { text-align: left; }
         }
     </style>
 </head>
@@ -133,7 +149,7 @@
         <h1>TrachymelaID</h1>
         <div class="author-name">by Gunter F. Maywald</div>
     </div>
-    <img src="STImage7.jpg" alt="Logo" style="height: 45px;">
+    <img src="STImage7.jpg" alt="Logo" class="logo">
 </div>
 
 <div class="hero">

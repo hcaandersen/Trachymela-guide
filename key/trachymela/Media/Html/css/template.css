@@ -950,6 +950,15 @@ a.popwin {
 
 /*---------------------------- BEGIN MOBILE RESPONSIVE SETTINGS ----------------------------*/
 @media screen and (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+
     #left_menu {
         display: none;
     }
@@ -958,6 +967,27 @@ a.popwin {
         margin-left: 10px;
         margin-right: 10px;
         min-width: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
+    #content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #content FONT, #content font {
+        font-size: inherit !important;
+    }
+
+    #content FONT[size], #content font[size] {
+        font-size: 14px !important;
+    }
+
+    #content p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: left;
     }
 
     #thumbnailsArea {
@@ -968,18 +998,23 @@ a.popwin {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
+        padding: 8px;
     }
 
     #thumbnailsArea a#thumbnails {
         display: inline-block;
-        width: calc(50% - 10px);
+        width: calc(50% - 8px);
         text-align: center;
     }
 
     #thumbnailsArea a#thumbnails img {
         max-width: 100%;
         height: auto;
+    }
+
+    p.ImageCaption {
+        font-size: 9px;
     }
 
     #menu {
@@ -991,9 +1026,9 @@ a.popwin {
     }
 
     .bannertitle {
-        font-size: 22px;
+        font-size: 20px;
         margin-top: 5px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 
     .bannerbg, .bannerImage {
@@ -1009,6 +1044,10 @@ a.popwin {
         height: auto;
     }
 
+    #banner table {
+        width: 100% !important;
+    }
+
     #OtherMediaArea, #VideoMediaArea {
         float: none;
         min-width: 0;
@@ -1018,15 +1057,59 @@ a.popwin {
 
     table {
         max-width: 100%;
+        font-size: 11px;
     }
 
     #alphabet {
-        letter-spacing: 5px;
-        font-size: 12px;
+        letter-spacing: 2px;
+        font-size: 11px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
 
     div.caption, div.bottom_img_caption {
         width: auto;
+    }
+
+    h1 {
+        font-size: 16px;
+    }
+
+    .enlarge_text {
+        font-size: 11px;
+    }
+
+    .copyright p, .alt_copyright p {
+        font-size: 10px;
+    }
+
+    a.menu {
+        font-size: 12px !important;
+        padding: 4px 2px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #thumbnailsArea a#thumbnails {
+        width: 100%;
+    }
+
+    .bannertitle {
+        font-size: 18px;
+    }
+
+    #content {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+
+    #content FONT[size], #content font[size] {
+        font-size: 13px !important;
+    }
+
+    #content p {
+        font-size: 13px;
     }
 }
 /*---------------------------- END MOBILE RESPONSIVE SETTINGS ----------------------------*/

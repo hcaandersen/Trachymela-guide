@@ -8,12 +8,14 @@
 	html {
 		scroll-behavior: smooth;
 	}
+	*, *::before, *::after { box-sizing: border-box; }
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
         background-color: #efe6d8;
         line-height: 1.6;
         color: #333;
+        overflow-x: hidden;
     }
     .header {
         background-color: #4b3621;
@@ -53,36 +55,30 @@
         padding-bottom: 5px;
     }
 	/* Default for desktop: 2 columns */
-	ul { 
-		list-style-type: none; 
-		padding-left: 0; 
-		column-count: 2; 
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		column-count: 2;
 	}
 
-	/* For mobile screens (less than 600px wide): 1 column */
-	@media screen and (max-width: 600px) {
-	ul {
-        column-count: 1;
-		}
-		.header {
-			font-size: 28px;
-			padding: 12px 15px;
-			gap: 12px;
-		}
-		.header img { height: 40px; }
-		.subheader {
-			font-size: 16px;
-			padding: 8px 15px;
-		}
-		.content-container {
-			margin: 20px 10px;
-			padding: 20px 15px;
-		}
-	}
     li { margin-bottom: 5px; break-inside: avoid; }
-    a { text-decoration: none; color: #4b3621; font-weight: bold; }
-    a:hover { color: #8b6b43; text-decoration: underline; }
+    li a {
+        text-decoration: none; color: #4b3621; font-weight: bold;
+        display: inline-block; padding: 4px 0; min-height: 32px;
+    }
+    li a:hover { color: #8b6b43; text-decoration: underline; }
     .synonym { font-weight: normal; font-style: italic; padding-left: 20px; font-size: 0.9em; display: block; }
+    .nav-links {
+        text-align: center;
+        margin-bottom: 30px;
+        line-height: 2;
+        font-weight: bold;
+    }
+    .nav-links a {
+        text-decoration: none; color: #4b3621; font-weight: bold;
+        display: inline-block; padding: 4px 6px;
+    }
+    .nav-links a:hover { color: #8b6b43; text-decoration: underline; }
     .back-button {
         display: inline-block;
         margin-top: 20px;
@@ -93,6 +89,38 @@
         border-radius: 8px;
         font-weight: bold;
     }
+
+	@media screen and (max-width: 768px) {
+		.header {
+			font-size: 32px;
+			padding: 14px 20px;
+			gap: 14px;
+		}
+		.header img { height: 48px; }
+		.subheader { font-size: 18px; padding: 8px 20px; }
+	}
+
+	@media screen and (max-width: 480px) {
+		ul { column-count: 1; }
+		.header {
+			font-size: 24px;
+			padding: 12px 15px;
+			gap: 10px;
+		}
+		.header img { height: 36px; }
+		.subheader {
+			font-size: 15px;
+			padding: 6px 15px;
+		}
+		.content-container {
+			margin: 15px 8px;
+			padding: 15px 12px;
+		}
+		.nav-links { line-height: 2.2; }
+		.nav-links a { padding: 6px 4px; font-size: 14px; }
+		.section-hd { font-size: 18px; padding: 8px 14px; }
+		.sub-group-hd { font-size: 18px; }
+	}
 </style>
 </head>
 <body>
@@ -109,19 +137,19 @@
 <div class="content-container">
     <a href="index.html" class="back-button">Back to Menu</a>
 
-	<div style="text-align: center; margin-bottom: 30px; line-height: 2;">
-		<div style="font-weight: bold;">
-			<a href="#group-AC">A-C</a> &nbsp; <a href="#group-DI">D-I</a> &nbsp; 
-			<a href="#group-JO">J-O</a> &nbsp; <a href="#group-PR">P-R</a> &nbsp; 
-			<a href="#group-ST">S-T</a> &nbsp; <a href="#group-UZ">U-Z</a>
+	<div class="nav-links">
+		<div>
+			<a href="#group-AC">A-C</a> <a href="#group-DI">D-I</a>
+			<a href="#group-JO">J-O</a> <a href="#group-PR">P-R</a>
+			<a href="#group-ST">S-T</a> <a href="#group-UZ">U-Z</a>
 		</div>
-		<div style="font-weight: bold;">
-			<a href="#Ta01-20">Ta01-20</a> &nbsp; <a href="#Ta21-40">Ta21-40</a> &nbsp; 
-			<a href="#Ta41-60">Ta41-60</a> &nbsp; <a href="#Ta61-80">Ta61-80</a> &nbsp; 
-			<a href="#Ta81-100">Ta81-100</a> &nbsp; <a href="#Ta101-120">Ta101-120</a> &nbsp; 
-			<a href="#Ta121-140">Ta121-140</a> &nbsp; <a href="#Ta141-160">Ta141-160</a>  &nbsp;
-			<a href="#Ta161-180">Ta161-180</a> &nbsp; <a href="#Ta181-200">Ta181-200</a>  &nbsp;
-			<a href="#Ta201-220">Ta201-220</a> &nbsp; <a href="#Ta221-238">Ta221-238</a>
+		<div>
+			<a href="#Ta01-20">Ta01-20</a> <a href="#Ta21-40">Ta21-40</a>
+			<a href="#Ta41-60">Ta41-60</a> <a href="#Ta61-80">Ta61-80</a>
+			<a href="#Ta81-100">Ta81-100</a> <a href="#Ta101-120">Ta101-120</a>
+			<a href="#Ta121-140">Ta121-140</a> <a href="#Ta141-160">Ta141-160</a>
+			<a href="#Ta161-180">Ta161-180</a> <a href="#Ta181-200">Ta181-200</a>
+			<a href="#Ta201-220">Ta201-220</a> <a href="#Ta221-238">Ta221-238</a>
 		</div>
 	</div>
 
